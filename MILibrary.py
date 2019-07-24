@@ -1,20 +1,6 @@
 import binascii
 import MFRC522
-import signal
 from math import ceil
-from termcolor import colored
-
-def white(string):
-    return colored(string, "white")
-
-def green(string):
-    return colored(string, "green")
-
-def cyan(string):
-    return colored(string, "cyan")
-
-def red(string):
-    return colored(string, "red")
 
 
 def authenticate_card(blockNum, key, uid):
