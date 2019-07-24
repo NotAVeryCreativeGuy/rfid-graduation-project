@@ -1,17 +1,15 @@
+#!/usr/bin/env python2
 import os
 import binascii
 import hmac
-import MFRC522
 from MILibrary import * 
+from coloredtext import *
 from Crypto.Cipher import AES
-from termcolor import colored
-
-
 
 continue_reading = True
 uid = []
-reader_uid  = [225, 184, 209, 32, 168]
 tag_uid = [81,80,155,32,186]
+reader_uid = [225, 184, 209, 32, 168]
 master_key = "1234567890ABCDEF"
 key = [0xFF,0xFF,0xFF,0xFF,0xFF,0xFF]
 
@@ -49,7 +47,6 @@ while continue_reading:
     print white("[*] Transmitting value of A...")
     select_card(reader_uid)
     write_data(8, key, reader_uid, A)
-    MIFAREReader.MFRC522_StopCrypto1()
     print green("[*] Value of A has been written.")
 
     print white("[*] Waiting for value of B from tag...")

@@ -1,13 +1,10 @@
-#!/usr/bin/env python
-
-import RPi.GPIO as GPIO
+#!/usr/bin/env python2
 import os
 import binascii
-from Crypto.Cipher import AES
 import hmac
-import MFRC522
 from MILibrary import * 
-
+from coloredtext import *
+from Crypto.Cipher import AES
 
 continue_reading = True
 uid = []
@@ -15,7 +12,6 @@ tag_uid = [81,80,155,32,186]
 reader_uid = [225, 184, 209, 32, 168]
 master_key = "1234567890ABCDEF"
 key = [0xFF,0xFF,0xFF,0xFF,0xFF,0xFF]
-
 
 
 print white("[*] Tag program started...")
@@ -65,6 +61,5 @@ while continue_reading:
 	print white("\t- B = ") + cyan(binascii.hexlify(B))
 	write_data(10, key, tag_uid, B)
 
-	MIFAREReader.MFRC522_StopCrypto1()
 
 
