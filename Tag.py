@@ -60,6 +60,6 @@ while continue_reading:
 	B = cipher.encrypt(new_key)
 	print white("\t- B = ") + cyan(binascii.hexlify(B))
 	write_data(10, key, tag_uid, B)
-
+	print green("[*] Value of B has been written.")
 
 
